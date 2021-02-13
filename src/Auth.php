@@ -1912,6 +1912,28 @@ class Auth
 
     }
 
+    /**
+     * Does user have meta key.
+     *
+     * @param string $user_id
+     * @param string $meta_key
+     *
+     * @return bool
+     */
+
+    public function userHasMeta(string $user_id, string $meta_key): bool
+    {
+
+        try {
+            $this->getUserMeta($user_id, $meta_key);
+        } catch (InvalidMetaException $e) {
+            return false;
+        }
+
+        return true;
+
+    }
+
     /*
      * ############################################################
      * Grants

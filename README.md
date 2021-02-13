@@ -157,6 +157,7 @@ If the user is disabled, they will simply have no permissions.
 - [setUserMeta](#setusermeta)
 - [getUserMeta](#getusermeta)
 - [deleteUserMeta](#deleteusermeta)
+- [userHasMeta](#userhasmeta)
 
 **Grants**
 
@@ -1138,6 +1139,23 @@ Delete user meta.
 **Throws:**
 
 - `Exception`
+
+<hr />
+
+### userHasMeta
+
+**Description:**
+
+Does user have meta key.
+
+**Parameters:**
+
+- `$user_id` (string)
+- `$meta_key` (string)
+
+**Returns:**
+
+- (bool)
 
 <hr />
 
