@@ -685,6 +685,30 @@ class Auth
 
     }
 
+    /**
+     * Get all roles with permission.
+     *
+     * @param string $permission_id
+     *
+     * @return array
+     */
+
+    public function getPermissionRoles(string $permission_id): array
+    {
+
+        $stmt = $this->pdo->prepare("SELECT rr.* FROM rbac_roles AS rr
+            LEFT JOIN rbac_role_permissions AS rrp ON rr.id = rrp.roleId
+            WHERE rrp.permissionId = :permission_id
+            ORDER BY rr.name");
+
+        $stmt->execute([
+            'permission_id' => $permission_id
+        ]);
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    }
+
     /*
      * ############################################################
      * Roles

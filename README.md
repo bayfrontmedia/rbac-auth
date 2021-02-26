@@ -118,6 +118,7 @@ If the user is disabled, they will simply have no permissions.
 - [createPermission](#createpermission)
 - [updatePermission](#updatepermission)
 - [deletePermission](#deletepermission)
+- [getPermissionRoles](#getpermissionroles)
 
 **Roles**
 
@@ -516,6 +517,22 @@ Delete permission.
 **Returns:**
 
 - (bool): If permission existed
+
+<hr />
+
+### getPermissionRoles
+
+**Description:**
+
+Get all roles with permission.
+
+**Parameters:**
+
+- `$permission_id` (string)
+
+**Returns:**
+
+- (array)
 
 <hr />
 
