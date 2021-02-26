@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "bayfrontmedia/php-array-helpers",
-            "version": "v1.1.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bayfrontmedia/php-array-helpers.git",
-                "reference": "ac938e3b5a252960539e331075d86a1e38bb4264"
+                "reference": "8e78b154bc30d89db11a1a3e4602c4f860377754"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bayfrontmedia/php-array-helpers/zipball/ac938e3b5a252960539e331075d86a1e38bb4264",
-                "reference": "ac938e3b5a252960539e331075d86a1e38bb4264",
+                "url": "https://api.github.com/repos/bayfrontmedia/php-array-helpers/zipball/8e78b154bc30d89db11a1a3e4602c4f860377754",
+                "reference": "8e78b154bc30d89db11a1a3e4602c4f860377754",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bayfrontmedia/php-array-helpers/issues",
-                "source": "https://github.com/bayfrontmedia/php-array-helpers/tree/v1.1.0"
+                "source": "https://github.com/bayfrontmedia/php-array-helpers/tree/v1.3.0"
             },
             "funding": [
                 {
@@ -60,7 +60,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-11-23T16:52:47+00:00"
+            "time": "2021-02-17T22:07:11+00:00"
         },
         {
             "name": "bayfrontmedia/php-string-helpers",

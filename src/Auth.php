@@ -1991,16 +1991,31 @@ class Auth
     /**
      * Revoke users from group.
      *
+     * If $users is NULL, all users will be revoked from the group.
+     *
      * @param string $group_id
-     * @param string|array $users (User ID(s))
+     * @param string|array|null $users (User ID(s))
      *
      * @return void
      *
      * @throws Exception
      */
 
-    public function revokeGroupUsers(string $group_id, $users): void
+    public function revokeGroupUsers(string $group_id, $users = NULL): void
     {
+
+        if (NULL === $users) { // Revoke all
+
+            $stmt = $this->pdo->prepare("DELETE FROM rbac_group_users
+                WHERE groupId = :group_id");
+
+            $stmt->execute([
+                'group_id' => $group_id
+            ]);
+
+            return;
+
+        }
 
         try {
 
@@ -2076,16 +2091,31 @@ class Auth
     /**
      * Revoke groups from user.
      *
+     * If $groups is NULL, all groups will be revoked from the user.
+     *
      * @param string $user_id
-     * @param string|array $groups (Group ID(s))
+     * @param string|array|null $groups (Group ID(s))
      *
      * @return void
      *
      * @throws Exception
      */
 
-    public function revokeUserGroups(string $user_id, $groups): void
+    public function revokeUserGroups(string $user_id, $groups = NULL): void
     {
+
+        if (NULL === $groups) { // Revoke all
+
+            $stmt = $this->pdo->prepare("DELETE FROM rbac_group_users
+                WHERE userId = :user_id");
+
+            $stmt->execute([
+                'user_id' => $user_id
+            ]);
+
+            return;
+
+        }
 
         try {
 
@@ -2163,16 +2193,31 @@ class Auth
     /**
      * Revoke permissions from role.
      *
+     * If $permissions is NULL, all permissions will be revoked from the role.
+     *
      * @param string $role_id
-     * @param string|array $permissions (Permission ID(s))
+     * @param string|array|null $permissions (Permission ID(s))
      *
      * @return void
      *
      * @throws Exception
      */
 
-    public function revokeRolePermissions(string $role_id, $permissions): void
+    public function revokeRolePermissions(string $role_id, $permissions = NULL): void
     {
+
+        if (NULL === $permissions) { // Revoke all
+
+            $stmt = $this->pdo->prepare("DELETE FROM rbac_role_permissions
+                WHERE roleId = :role_id");
+
+            $stmt->execute([
+                'role_id' => $role_id
+            ]);
+
+            return;
+
+        }
 
         try {
 
@@ -2247,16 +2292,31 @@ class Auth
     /**
      * Revoke permission from roles.
      *
+     * If $roles is NULL, all roles will be revoked from the permission.
+     *
      * @param string $permission_id
-     * @param string|array $roles (Role ID(s))
+     * @param string|array|null $roles (Role ID(s))
      *
      * @return void
      *
      * @throws Exception
      */
 
-    public function revokePermissionRoles(string $permission_id, $roles): void
+    public function revokePermissionRoles(string $permission_id, $roles = NULL): void
     {
+
+        if (NULL === $roles) { // Revoke all
+
+            $stmt = $this->pdo->prepare("DELETE FROM rbac_role_permissions
+                WHERE permissionId = :permission_id");
+
+            $stmt->execute([
+                'permission_id' => $permission_id
+            ]);
+
+            return;
+
+        }
 
         try {
 
@@ -2333,16 +2393,31 @@ class Auth
     /**
      * Revoke users from role.
      *
+     * If $users is NULL, all users will be revoked from the role.
+     *
      * @param string $role_id
-     * @param string|array $users (User ID(s))
+     * @param string|array|null $users (User ID(s))
      *
      * @return void
      *
      * @throws Exception
      */
 
-    public function revokeRoleUsers(string $role_id, $users): void
+    public function revokeRoleUsers(string $role_id, $users = NULL): void
     {
+
+        if (NULL === $users) { // Revoke all
+
+            $stmt = $this->pdo->prepare("DELETE FROM rbac_role_users
+                WHERE roleId = :role_id");
+
+            $stmt->execute([
+                'role_id' => $role_id
+            ]);
+
+            return;
+
+        }
 
         try {
 
@@ -2417,16 +2492,31 @@ class Auth
     /**
      * Revoke roles from user.
      *
+     * If $roles is NULL, all roles will be revoked from the user.
+     *
      * @param string $user_id
-     * @param string|array $roles (Role ID(s))
+     * @param string|array|null $roles (Role ID(s))
      *
      * @return void
      *
      * @throws Exception
      */
 
-    public function revokeUserRoles(string $user_id, $roles): void
+    public function revokeUserRoles(string $user_id, $roles = NULL): void
     {
+
+        if (NULL === $roles) { // Revoke all
+
+            $stmt = $this->pdo->prepare("DELETE FROM rbac_role_users
+                WHERE userId = :user_id");
+
+            $stmt->execute([
+                'user_id' => $user_id
+            ]);
+
+            return;
+
+        }
 
         try {
 

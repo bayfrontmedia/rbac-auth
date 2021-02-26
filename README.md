@@ -1186,10 +1186,12 @@ Grant group to users.
 
 Revoke users from group.
 
+If `$users` is `NULL`, all users will be revoked from the group.
+
 **Parameters:**
 
 - `$group_id` (string)
-- `$users` (string|array): User ID(s)
+- `$users = NULL` (string|array|null): User ID(s)
 
 **Returns:**
 
@@ -1228,10 +1230,12 @@ Grant groups to user.
 
 Revoke groups from user.
 
+If `$groups` is `NULL`, all groups will be revoked from the user.
+
 **Parameters:**
 
 - `$user_id` (string)
-- `$groups` (string|array): Group ID(s)
+- `$groups = NULL` (string|array|null): Group ID(s)
 
 **Returns:**
 
@@ -1270,10 +1274,12 @@ Grant permissions to role.
 
 Revoke permissions from role.
 
+If `$permissions` is `NULL`, all permissions will be revoked from the role.
+
 **Parameters:**
 
 - `$role_id` (string)
-- `$permissions` (string|array): Permission ID(s)
+- `$permissions = NULL` (string|array|null): Permission ID(s)
 
 **Returns:**
 
@@ -1312,10 +1318,12 @@ Grant permission to roles.
 
 Revoke permission from roles.
 
+If `$roles` is `NULL`, all roles will be revoked from the permission.
+
 **Parameters:**
 
 - `$permission_id` (string)
-- `$roles` (string|array): Role ID(s)
+- `$roles = NULL` (string|array|null): Role ID(s)
 
 **Returns:**
 
@@ -1354,10 +1362,12 @@ Grant users to role.
 
 Revoke users from role.
 
+If `$users` is `NULL`, all users will be revoked from the role.
+
 **Parameters:**
 
 - `$role_id` (string)
-- `$users` (string|array): User ID(s)
+- `$users = NULL` (string|array|null): User ID(s)
 
 **Returns:**
 
@@ -1396,10 +1406,12 @@ Grant roles to user.
 
 Revoke roles from user.
 
+If `$roles` is `NULL`, all roles will be revoked from the user.
+
 **Parameters:**
 
 - `$user_id` (string)
-- `$roles` (string|array): Role ID(s)
+- `$roles = NULL` (string|array|null): Role ID(s)
 
 **Returns:**
 
