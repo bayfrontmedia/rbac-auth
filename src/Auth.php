@@ -885,6 +885,10 @@ class Auth
 
         if (isset($role['attributes']) && NULL !== $role['attributes']) {
 
+            if (isset($role['attributes']['enabled'])) {
+                $role['attributes']['enabled'] = (int)$role['attributes']['enabled'];
+            }
+
             $role['attributes'] = json_encode((array)$role['attributes']);
 
         }
@@ -1413,6 +1417,10 @@ class Auth
         // Convert arrays
 
         if (isset($user['attributes']) && NULL !== $user['attributes']) {
+
+            if (isset($user['attributes']['enabled'])) {
+                $user['attributes']['enabled'] = (int)$user['attributes']['enabled'];
+            }
 
             $user['attributes'] = json_encode((array)$user['attributes']);
 
