@@ -881,13 +881,13 @@ class Auth
 
         $role['id'] = Str::uuid();
 
+        if (isset($role['enabled'])) {
+            $role['enabled'] = (int)$role['enabled'];
+        }
+
         // Convert arrays
 
         if (isset($role['attributes']) && NULL !== $role['attributes']) {
-
-            if (isset($role['attributes']['enabled'])) {
-                $role['attributes']['enabled'] = (int)$role['attributes']['enabled'];
-            }
 
             $role['attributes'] = json_encode((array)$role['attributes']);
 
@@ -1413,6 +1413,10 @@ class Auth
         // Hash password
 
         $user['password'] = $this->_hashPassword($user['password'], $user['salt']);
+
+        if (isset($user['enabled'])) {
+            $user['enabled'] = (int)$user['enabled'];
+        }
 
         // Convert arrays
 
