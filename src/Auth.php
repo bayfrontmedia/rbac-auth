@@ -959,6 +959,10 @@ class Auth
 
         foreach ($role as $k => $v) {
 
+            if ($k == 'enabled') {
+                $v = (int)$v;
+            }
+
             $sql .= $k . '=?, ';
 
             $placeholders[] = $v;
@@ -1501,6 +1505,10 @@ class Auth
         $placeholders = [];
 
         foreach ($user as $k => $v) {
+
+            if ($k == 'enabled') {
+                $v = (int)$v;
+            }
 
             $sql .= $k . '=?, ';
 
